@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-navy-950: #050d1f;
+  --color-navy-900: #0a1628;
+  --color-navy-800: #0f2045;
+  --color-navy-700: #152d5e;
+  --color-navy-600: #1a3a77;
+  --color-blue-600: #1d4ed8;
+  --color-blue-500: #3b82f6;
+  --color-blue-400: #60a5fa;
+  --color-blue-50: #eff6ff;
+  --color-cyan-500: #06b6d4;
+  --color-cyan-400: #22d3ee;
+  --color-amber-400: #fbbf24;
+  --color-amber-500: #f59e0b;
+
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Poppins', 'Noto Sans Devanagari', sans-serif;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #0a1628;
+  --primary: #1d4ed8;
+  --primary-foreground: #ffffff;
+  --accent: #06b6d4;
+  --muted: #eff6ff;
+  --border: #e2e8f0;
+  --radius: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif;
+  color: #0a1628;
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Devanagari text gets Noto Sans */
+:lang(mr), .lang-mr {
+  font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #1d4ed8;
+  border-radius: 3px;
+}
+
+/* Section utilities */
+.section-blue {
+  background: #eff6ff;
+}
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, #1d4ed8, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card hover */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(29, 78, 216, 0.12);
+}
+
+/* Image organic shape */
+.organic-image {
+  border-radius: 60% 40% 55% 45% / 45% 55% 40% 60%;
+}
+
+/* Hero floating card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.6);
+}
+
+/* Counter animation */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade in up */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Pulse glow */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(29,78,216,0.3); }
+  50% { box-shadow: 0 0 0 12px rgba(29,78,216,0); }
+}
+
+.pulse-glow {
+  animation: pulseGlow 2s infinite;
+}
+
+/* WhatsApp button */
+.whatsapp-btn {
+  background: #25d366;
+  box-shadow: 0 4px 15px rgba(37,211,102,0.4);
+}
+
+/* Nav dropdown */
+.nav-dropdown {
+  transform-origin: top left;
+}
+
+/* Mobile menu backdrop */
+.mobile-backdrop {
+  backdrop-filter: blur(8px);
+  background: rgba(10,22,40,0.85);
+}
+
+/* Lightbox */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Print */
+@media print {
+  .no-print { display: none; }
+}
