@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://demo-school-snowy.vercel.app/sitemap.xml
