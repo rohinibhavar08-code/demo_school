@@ -33,9 +33,16 @@ export default function Gallery() {
     { key: 'campus', labelMr: 'परिसर', labelEn: 'Campus' },
   ];
 
-  const filtered = activeCategory === 'all'
-    ? gallery
-    : gallery.filter((g) => g.category === activeCategory);
+
+  const filtered =
+    activeCategory === 'all'
+      ? gallery
+      : gallery.filter(
+        (g) =>
+          String(g.category ?? '').trim().toLowerCase() ===
+          activeCategory.toLowerCase()
+      );
+
 
   function openLightbox(idx) {
     setLightbox(idx);
@@ -88,11 +95,10 @@ export default function Gallery() {
               <button
                 key={cat.key}
                 onClick={() => setActiveCategory(cat.key)}
-                className={`flex-shrink-0 px-5 py-2 rounded-xl text-sm font-semibold transition-all ${
-                  activeCategory === cat.key
-                    ? 'bg-blue-600 text-white shadow-md'
-                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-                }`}
+                className={`flex-shrink-0 px-5 py-2 rounded-xl text-sm font-semibold transition-all ${activeCategory === cat.key
+                  ? 'bg-blue-600 text-white shadow-md'
+                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                  }`}
               >
                 {lang === 'mr' ? cat.labelMr : cat.labelEn}
               </button>
